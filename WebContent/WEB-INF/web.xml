@@ -17,4 +17,16 @@
   	<servlet-name>Hello</servlet-name>
   	<url-pattern>/Hello/Hello</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ServletDemo2</servlet-name>
+  	<servlet-class>ServletDemo2.ServletDemo2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ServletDemo2</servlet-name>
+  	<url-pattern>/ServletDemo2</url-pattern>
+  </servlet-mapping>
+
+  
+  
 </web-app>

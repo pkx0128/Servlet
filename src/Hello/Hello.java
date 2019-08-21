@@ -8,7 +8,7 @@ import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-
+//实现接口Servlet开发Servlet
 public class Hello implements Servlet {
 
 	@Override
