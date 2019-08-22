@@ -27,6 +27,8 @@ public class Welcome extends HttpServlet {
 //		pw.println("Welcome!");
 //		pw.println("Welcome："+res.getParameter("username")+"密码："+res.getParameter("password"));
 		pw.println("Welcome："+se.getAttribute("username")+"密码："+se.getAttribute("password"));
+		pw.println("</br>");
+		pw.println("<a href=loginout>安全退出</a>");
 		
 	}
 	
