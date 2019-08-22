@@ -9,5 +9,6 @@
 <body>
 	<a href = "./Hello/Hello">访问Hello</a>
 	<a href = "./ServletDemo2">访问ServletDemo2</a>
+	<a href = "./ServletDemo3">访问ServletDemo3</a>
 </body>
 </html>
