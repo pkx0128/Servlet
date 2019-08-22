@@ -8,10 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
+import javax.servlet.http.HttpSession;
 
 public class Login extends HttpServlet {
 
 	public void doGet(HttpServletRequest res,HttpServletResponse resp) throws ServletException,IOException {
+//		获取HttpSession对象
+		HttpSession se = res.getSession();
+//		判断是否登录
+		if(se.getAttribute("username")!=null) {
+//			已登录跳转到Welcome页面
+			resp.sendRedirect("welcome");
+		}
+		
 		resp.setContentType("text/html;charset=utf-8");
 		PrintWriter pw = resp.getWriter();
 		pw.println("<html>");
