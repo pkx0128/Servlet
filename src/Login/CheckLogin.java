@@ -23,6 +23,8 @@ public class CheckLogin extends HttpServlet {
 			session.setAttribute("username", username);
 //			保存登录密码到Session
 			session.setAttribute("password", password);
+//			设置Session有效时间为30秒
+			session.setMaxInactiveInterval(30);
 			
 			System.out.println("登录成功。。。。");
 //			跳转到Welcome页面并且传递username的值
