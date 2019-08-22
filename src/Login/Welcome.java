@@ -14,8 +14,8 @@ public class Welcome extends HttpServlet {
 		resp.setContentType("text/html;charset=utf-8");
 		PrintWriter pw = resp.getWriter();
 		pw.println("<h1>登录成功</h1>");
-		pw.println("Welcome!");
-//		pw.println("Welcome"+res.getParameter("username"));
+//		pw.println("Welcome!");
+		pw.println("Welcome："+res.getParameter("username"));
 		
 	}
 	

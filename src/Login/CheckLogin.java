@@ -16,7 +16,7 @@ public class CheckLogin extends HttpServlet {
 		String password = res.getParameter("password");
 		if(username.equals("abc") && password.equals("123456")) {
 			System.out.println("登录成功。。。。");
-			resp.sendRedirect("welcome");
+			resp.sendRedirect("welcome？username="+username);
 		}else {
 			System.out.println("登录失败。。。。");
 			resp.sendRedirect("login");
