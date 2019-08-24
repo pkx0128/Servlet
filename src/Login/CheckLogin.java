@@ -24,15 +24,17 @@ public class CheckLogin extends HttpServlet {
 		resp.setContentType("text/html;charset=utf-8");
 		String username = res.getParameter("username");
 		String password = res.getParameter("password");
-		
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet re=null;
 		try {
 //		加载数据库驱动
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/spdb","root","Pankx0128");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/spdb","root","Pankx0128");
 			String sql = "SELECT username,passwd FROM users WHERE username = ?";
-			PreparedStatement ps = conn.prepareStatement(sql);
+			ps = conn.prepareStatement(sql);
 			ps.setString(1, username);
-			ResultSet re = ps.executeQuery();
+			re = ps.executeQuery();
 			System.out.println("Sql 开始");
 			System.out.println("验证账号");
 //			判断指定用户名和密码
@@ -54,7 +56,7 @@ public class CheckLogin extends HttpServlet {
 				System.out.println("登录失败。。。。");
 				resp.sendRedirect("login");
 			}
-			conn.close();
+//			conn.close();
 			
 		} catch (InstantiationException e) {
 			// TODO Auto-generated catch block
@@ -67,6 +69,21 @@ public class CheckLogin extends HttpServlet {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				if(conn!=null) {
+					conn.close();					
+				}
+				if(ps!=null) {
+					ps.close();
+				}
+				if(re!=null) {
+					re.close();
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		
