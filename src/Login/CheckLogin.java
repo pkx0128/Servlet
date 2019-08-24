@@ -78,7 +78,7 @@ public class CheckLogin extends HttpServlet {
 					ps.close();
 				}
 				if(re!=null) {
-					re.close();
+					re.close(); 
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
