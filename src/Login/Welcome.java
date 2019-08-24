@@ -22,6 +22,7 @@ public class Welcome extends HttpServlet {
 		
 		resp.setContentType("text/html;charset=utf-8");
 		PrintWriter pw = resp.getWriter();
+		pw.println("<img src='./images/Hello.jpg'/>");
 		pw.println("<h1>登录成功</h1>");
 		System.out.println(se.getAttribute("username"));
 //		pw.println("Welcome!");
